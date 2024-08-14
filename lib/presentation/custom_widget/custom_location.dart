@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:food_box/application/bloc/location_bloc.dart';
-import 'package:food_box/utils/color.dart';
+import 'package:food_app/application/bloc/location_bloc.dart';
+import 'package:food_app/utils/color.dart';
 
 class LocationandUser extends StatelessWidget {
   final List<String> locations = [

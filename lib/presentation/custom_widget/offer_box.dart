@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:dotted_border/dotted_border.dart';
-import 'package:food_box/domain/offer/offerModel.dart';
+import 'package:food_app/domain/offer/offerModel.dart';
 
 class OfferContainer extends StatelessWidget {
+  final OfferModel offerModel;
+
   OfferContainer({
     super.key,
     required this.offerModel,
   });
 
-  final OfferModel offerModel;
-
   @override
   Widget build(BuildContext context) {
+    // Get screen width and height
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return Container(
-      width: 390, // Updated width
-      height: 150, // Reduced height
+      width: screenWidth * 0.9, // 90% of the screen width
+      height: screenHeight * 0.2, // 20% of the screen height
       margin: const EdgeInsets.symmetric(horizontal: 16.0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30.0),
@@ -32,14 +36,16 @@ class OfferContainer extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    offerModel.content!,
-                    maxLines: 3, // Limit content to 3 lines
-                    overflow: TextOverflow.clip,
-                    style: TextStyle(
-                      fontSize: 16, // Adjusted font size for better fit
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                  Expanded(
+                    child: Text(
+                      offerModel.content!,
+                      maxLines: 3, // Limit content to 3 lines
+                      overflow: TextOverflow.clip,
+                      style: TextStyle(
+                        fontSize: screenWidth * 0.04, // Adjusted font size for better fit
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                   const SizedBox(height: 10),
@@ -52,8 +58,8 @@ class OfferContainer extends StatelessWidget {
                       dashPattern: const [6, 3],
                       radius: const Radius.circular(4),
                       child: Container(
-                        height: 29,
-                        width: 150,
+                        height: screenHeight * 0.04, // Responsive height
+                        width: screenWidth * 0.4, // Responsive width
                         alignment: Alignment.center,
                         child: Text(
                           '${offerModel.cuponCode}',
@@ -67,12 +73,14 @@ class OfferContainer extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(width: 40), // Added spacing between text and image
-            Image.asset(
-              '${offerModel.image}',
-              height: 200, // Adjusted image height for better fit
-              width: 160, // Adjusted image width for better fit
-              fit: BoxFit.contain,
+            SizedBox(width: screenWidth * 0.1), // Responsive spacing between text and image
+            Flexible(
+              child: Image.asset(
+                '${offerModel.image}',
+                height: screenHeight * 0.25, // Responsive image height
+                width: screenWidth * 0.35, // Responsive image width
+                fit: BoxFit.contain,
+              ),
             ),
           ],
         ),
@@ -89,14 +97,14 @@ class OfferContainerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 150, 
-      width: 390, 
+      height: MediaQuery.of(context).size.height * 0.2, // Responsive height
+      width: MediaQuery.of(context).size.width, // Full screen width
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: offerList.length,
         itemBuilder: (context, index) {
           return Padding(
-            padding: const EdgeInsets.all(0.0),
+            padding: const EdgeInsets.all(8.0),
             child: OfferContainer(offerModel: offerList[index]),
           );
         },

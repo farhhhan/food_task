@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_box/domain/mealBox/mealBoxModel.dart';
+import 'package:food_app/domain/mealBox/mealBoxModel.dart';
 
 class ItemBox extends StatelessWidget {
 MealBoxModel mealBoxModel;

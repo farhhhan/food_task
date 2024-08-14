@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:food_box/utils/color.dart';
+import 'package:food_app/utils/color.dart';
 
 class Plater_choosing extends StatelessWidget {
   const Plater_choosing({

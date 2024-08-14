@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:food_box/presentation/custom_widget/catering_menu.dart';
-import 'package:food_box/presentation/custom_widget/custom_location.dart';
-import 'package:food_box/presentation/custom_widget/delivery_box.dart';
-import 'package:food_box/presentation/custom_widget/image_conatiner.dart';
-import 'package:food_box/presentation/custom_widget/meal_box.dart';
-import 'package:food_box/presentation/custom_widget/meal_catering.dart';
-import 'package:food_box/presentation/custom_widget/menu_card.dart';
-import 'package:food_box/presentation/custom_widget/offer_box.dart';
-import 'package:food_box/presentation/custom_widget/plater_choosing.dart';
+import 'package:food_app/presentation/custom_widget/catering_menu.dart';
+import 'package:food_app/presentation/custom_widget/custom_location.dart';
+import 'package:food_app/presentation/custom_widget/delivery_box.dart';
+import 'package:food_app/presentation/custom_widget/image_conatiner.dart';
+import 'package:food_app/presentation/custom_widget/meal_box.dart';
+import 'package:food_app/presentation/custom_widget/meal_catering.dart';
+import 'package:food_app/presentation/custom_widget/menu_card.dart';
+import 'package:food_app/presentation/custom_widget/offer_box.dart';
+import 'package:food_app/presentation/custom_widget/plater_choosing.dart';
 import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -27,39 +27,42 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return SafeArea(
       child: Scaffold(
         body: Stack(
           children: [
             ListView(
-              padding: EdgeInsets.only(bottom: 70),
+              padding: EdgeInsets.only(bottom: screenHeight * 0.1),
               children: [
                 LocationandUser(),
                 OfferContainerWidget(),
-                SizedBox(height: 20),
+                SizedBox(height: screenHeight * 0.02),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.0),
+                  padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.04),
                   child: Text('Start Crafting',
                       style: TextStyle(
                           fontWeight: FontWeight.w500,
-                          fontSize: 22,
+                          fontSize: screenWidth * 0.05,
                           color: Colors.black)),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: screenHeight * 0.01),
                 DeliverBox(),
-                SizedBox(height: 10),
+                SizedBox(height: screenHeight * 0.01),
                 DeliveryBoxWidget(),
-                SizedBox(height: 35),
+                SizedBox(height: screenHeight * 0.04),
                 Plater_choosing(),
-                SizedBox(height: 15),
+                SizedBox(height: screenHeight * 0.02),
                 DeliveryBox3Widget(),
-                SizedBox(height: 25),
+                SizedBox(height: screenHeight * 0.03),
                 MealBox(),
-                SizedBox(height: 15),
+                SizedBox(height: screenHeight * 0.02),
                 MealBoxWidget(),
                 CateringMenus(),
                 CateringMenusWidget(),
-                SizedBox(height: 50),
+                SizedBox(height: screenHeight * 0.05),
               ],
             ),
             Positioned(
@@ -67,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
               left: 0,
               right: 0,
               child: Container(
-                height: 120,
+                height: screenHeight * 0.17, // Adjust height based on screen size
                 child: FloatingNavbar(
                   backgroundColor: const Color.fromARGB(255, 253, 254, 255),
                   selectedItemColor: const Color.fromARGB(255, 4, 4, 4),
@@ -78,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     FloatingNavbarItem(
                       customWidget: Icon(
                         Icons.account_circle,
-                        size: 40,
+                        size: screenWidth * 0.07, // Responsive icon size
                         color: Colors.grey,
                       ),
                       title: 'Profile',
@@ -87,25 +90,25 @@ class _HomeScreenState extends State<HomeScreen> {
                       icon: Icons.image,
                       customWidget: CircleAvatar(
                         backgroundColor: Colors.yellow,
-                        radius: 24,
+                        radius: screenWidth * 0.08, // Responsive radius
                         child: CircleAvatar(
                           backgroundImage: AssetImage('images/bottom.jpg'),
-                          radius: 22,
+                          radius: screenWidth * 0.07, // Responsive radius
                         ),
                       ),
                     ),
                     FloatingNavbarItem(
                         title: 'Orders',
                         customWidget: CircleAvatar(
-                          maxRadius: 18,
+                          maxRadius: screenWidth * 0.05, // Responsive max radius
                           backgroundColor: Colors.grey,
                           child: CircleAvatar(
-                            maxRadius: 17,
+                            maxRadius: screenWidth * 0.045, // Responsive max radius
                             backgroundColor: Colors.white,
                             child: Center(
                               child: Icon(
                                 Icons.restaurant,
-                                size: 18,
+                                size: screenWidth * 0.05, // Responsive icon size
                                 color: Color.fromARGB(255, 71, 71, 71),
                               ),
                             ),
@@ -114,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                   currentIndex: _selectedIndex,
                   onTap: _onItemTapped,
-                  iconSize: 30,
+                  iconSize: screenWidth * 0.07, // Responsive icon size
                 ),
               ),
             ),
