@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/domain/mealBox/mealBoxModel.dart';
 
+// ignore: must_be_immutable
 class ItemBox extends StatelessWidget {
 MealBoxModel mealBoxModel;
 

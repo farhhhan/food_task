@@ -22,25 +22,24 @@ class CateringMenus extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Expanded(
-                      child: Text(
-                        'Catering Menus',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: screenWidth * 0.05, // Responsive font size
-                          color: CustomColor.blueColor(),
-                        ),
+                    Text(
+                      'Catering Menus',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: screenWidth * 0.05, // Responsive font size
+                        color: CustomColor.blueColor(),
                       ),
                     ),
                     Text(
-                      "( ",
+                      " ( ",
                       style: TextStyle(color: Colors.grey),
                     ),
                     Icon(
                       Icons.person,
                       color: Colors.grey,
-                      size: screenWidth * 0.04, // Responsive icon size
+                      size: screenWidth * 0.04, 
                     ),
                     Text(
                       " Min 200 )",

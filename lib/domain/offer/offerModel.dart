@@ -14,13 +14,13 @@ List offerList = [
   OfferModel(
       image: "images/Layer 2.png",
       content: "Enjoy your first order, the taste of our delicious food!'",
-      cuponCode: "FIRSTPLATE01"),
+      cuponCode: "FIRSTPLATE02"),
   OfferModel(
       image: "images/Layer 2.png",
       content: "Enjoy your first order, the taste of our delicious food!'",
-      cuponCode: "FIRSTPLATE01"),
+      cuponCode: "FIRSTPLATE03"),
   OfferModel(
       image: "images/Layer 2.png",
       content: "Enjoy your first order, the taste of our delicious food!'",
-      cuponCode: "FIRSTPLATE01")
+      cuponCode: "FIRSTPLATE04")
 ];

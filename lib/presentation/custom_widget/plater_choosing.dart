@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:food_app/utils/color.dart';
 
 class Plater_choosing extends StatelessWidget {
@@ -21,9 +20,9 @@ class Plater_choosing extends StatelessWidget {
                 fontSize: 20,
                 shadows: [
                   Shadow(
-                    offset: Offset(2.0, 3.0), // Position of the shadow
-                    blurRadius: 2.0, // Blur radius of the shadow
-                    color: Color.fromARGB(147, 192, 190, 190), // Color and opacity of the shadow
+                    offset: Offset(2.0, 3.0), 
+                    blurRadius: 2.0, 
+                    color: Color.fromARGB(147, 192, 190, 190),
                   ),
                 ],
               ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class DeliverBox extends StatelessWidget {
   const DeliverBox({
@@ -8,12 +7,12 @@ class DeliverBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Get screen width and height using MediaQuery
+   
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
 
     return Container(
-      height: screenHeight * 0.195, // Responsive height
+      height: screenHeight * 0.195, 
       margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.04), // Responsive margin
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(11.0),
@@ -28,8 +27,11 @@ class DeliverBox extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          Align(
-            alignment: Alignment.bottomRight, // Align the image to the bottom-left
+          Positioned(
+              bottom:0 , 
+              top: 20,
+              left: 160,
+              right: 0,
             child: Container(
               decoration: BoxDecoration(
                  borderRadius: BorderRadius.circular(11.0),
@@ -37,61 +39,60 @@ class DeliverBox extends StatelessWidget {
               height: screenHeight * 0.7,
               child: Image.asset(
                 'images/e-removebg-preview.png',
-                height: screenHeight * 0.7, // Responsive image height
-                width: screenWidth * 0.6, // Responsive image width
-                fit: BoxFit.contain,
+                height: screenHeight * 0.7, 
+                width: screenWidth * 0.4, 
+                fit: BoxFit.fill,
               ),
             ),
           ),
-          // Content over the image
           Padding(
-            padding: EdgeInsets.all(screenWidth * 0.02), // Responsive padding
+            padding: EdgeInsets.all(screenWidth * 0.02), 
             child: Row(
               children: [
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(height: screenHeight * 0.01), // Responsive SizedBox
+                      SizedBox(height: screenHeight * 0.01), 
                       Flexible(
                         child: FittedBox(
                           fit: BoxFit.scaleDown,
                           child: Text(
                             "Delivery Box",
                             style: TextStyle(
-                              fontSize: screenWidth * 0.04, // Responsive font size
+                              fontSize: screenWidth * 0.04, 
                               fontWeight: FontWeight.w500,
                               color: Colors.black,
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(height: screenHeight * 0.01), // Responsive SizedBox
+                      SizedBox(height: screenHeight * 0.01),
                       Row(
                         children: [
                           Icon(
                             Icons.person,
-                            size: screenWidth * 0.05, // Responsive icon size
+                            size: screenWidth * 0.05,
                             color: const Color.fromARGB(255, 150, 94, 74),
                           ),
-                          SizedBox(width: screenWidth * 0.02), // Responsive spacing
+                          SizedBox(width: screenWidth * 0.02), 
                           Text(
                             " Min 10 - Max 120",
                             style: TextStyle(
                               color: const Color.fromARGB(255, 155, 108, 28),
-                              fontSize: screenWidth * 0.035, // Responsive font size
+                              fontSize: screenWidth * 0.035,
                             ),
                           ),
                         ],
                       ),
-                      SizedBox(height: screenHeight * 0.03), // Responsive SizedBox
+                      SizedBox(height: screenHeight * 0.03), 
                       GestureDetector(
                         onTap: () {},
                         child: Container(
-                          width: screenWidth * 0.35, // Responsive width
+                          width: screenWidth * 0.35, 
                           padding: EdgeInsets.symmetric(
-                            horizontal: screenWidth * 0.04, // Responsive horizontal padding
-                            vertical: screenHeight * 0.01, // Responsive vertical padding
+                            horizontal: screenWidth * 0.04, 
+                            vertical: screenHeight * 0.01, 
                           ),
                           decoration: const BoxDecoration(
                             color: Colors.orange,
@@ -107,12 +108,12 @@ class DeliverBox extends StatelessWidget {
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
-                                    fontSize: screenWidth * 0.04, // Responsive font size
+                                    fontSize: screenWidth * 0.04, 
                                   ),
                                 ),
                                 Icon(
                                   Icons.arrow_forward,
-                                  size: screenWidth * 0.04, // Responsive icon size
+                                  size: screenWidth * 0.04, 
                                   color: Colors.white,
                                 ),
                               ],
@@ -123,7 +124,7 @@ class DeliverBox extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(width: screenWidth * 0.03), // Responsive spacing
+                SizedBox(width: screenWidth * 0.03),
               ],
             ),
           ),

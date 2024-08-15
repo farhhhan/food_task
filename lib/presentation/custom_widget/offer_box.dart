@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:flutter/services.dart';
 import 'package:food_app/domain/offer/offerModel.dart';
+import 'package:food_app/presentation/custom_widget/copen_widget.dart';
 
 class OfferContainer extends StatelessWidget {
   final OfferModel offerModel;
@@ -39,10 +41,11 @@ class OfferContainer extends StatelessWidget {
                   Expanded(
                     child: Text(
                       offerModel.content!,
-                      maxLines: 3, // Limit content to 3 lines
+                      maxLines: 3, 
                       overflow: TextOverflow.clip,
                       style: TextStyle(
-                        fontSize: screenWidth * 0.04, // Adjusted font size for better fit
+                        fontSize: screenWidth *
+                            0.04,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
@@ -57,28 +60,18 @@ class OfferContainer extends StatelessWidget {
                       strokeWidth: 1,
                       dashPattern: const [6, 3],
                       radius: const Radius.circular(4),
-                      child: Container(
-                        height: screenHeight * 0.04, // Responsive height
-                        width: screenWidth * 0.4, // Responsive width
-                        alignment: Alignment.center,
-                        child: Text(
-                          '${offerModel.cuponCode}',
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 249, 184, 4),
-                          ),
-                        ),
-                      ),
+                      child: CouponCodeWidget(cuponCode: offerModel.cuponCode!,)
                     ),
                   ),
                 ],
               ),
             ),
-            SizedBox(width: screenWidth * 0.1), // Responsive spacing between text and image
+            SizedBox(width: screenWidth * 0.1),
             Flexible(
               child: Image.asset(
                 '${offerModel.image}',
-                height: screenHeight * 0.25, // Responsive image height
-                width: screenWidth * 0.35, // Responsive image width
+                height: screenHeight * 0.25,
+                width: screenWidth * 0.35,
                 fit: BoxFit.contain,
               ),
             ),
@@ -97,8 +90,8 @@ class OfferContainerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.2, // Responsive height
-      width: MediaQuery.of(context).size.width, // Full screen width
+      height: MediaQuery.of(context).size.height * 0.2,
+      width: MediaQuery.of(context).size.width,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: offerList.length,

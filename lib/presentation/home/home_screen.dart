@@ -70,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
               left: 0,
               right: 0,
               child: Container(
-                height: screenHeight * 0.17, // Adjust height based on screen size
+                height: screenHeight * 0.17,
                 child: FloatingNavbar(
                   backgroundColor: const Color.fromARGB(255, 253, 254, 255),
                   selectedItemColor: const Color.fromARGB(255, 4, 4, 4),
@@ -81,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     FloatingNavbarItem(
                       customWidget: Icon(
                         Icons.account_circle,
-                        size: screenWidth * 0.07, // Responsive icon size
+                        size: screenWidth * 0.12,
                         color: Colors.grey,
                       ),
                       title: 'Profile',
@@ -90,25 +90,25 @@ class _HomeScreenState extends State<HomeScreen> {
                       icon: Icons.image,
                       customWidget: CircleAvatar(
                         backgroundColor: Colors.yellow,
-                        radius: screenWidth * 0.08, // Responsive radius
+                        radius: screenWidth * 0.08, 
                         child: CircleAvatar(
                           backgroundImage: AssetImage('images/bottom.jpg'),
-                          radius: screenWidth * 0.07, // Responsive radius
+                          radius: screenWidth * 0.07, 
                         ),
                       ),
                     ),
                     FloatingNavbarItem(
                         title: 'Orders',
                         customWidget: CircleAvatar(
-                          maxRadius: screenWidth * 0.05, // Responsive max radius
+                          maxRadius: screenWidth * 0.05, 
                           backgroundColor: Colors.grey,
                           child: CircleAvatar(
-                            maxRadius: screenWidth * 0.045, // Responsive max radius
+                            maxRadius: screenWidth * 0.045, 
                             backgroundColor: Colors.white,
                             child: Center(
                               child: Icon(
                                 Icons.restaurant,
-                                size: screenWidth * 0.05, // Responsive icon size
+                                size: screenWidth * 0.05,
                                 color: Color.fromARGB(255, 71, 71, 71),
                               ),
                             ),
@@ -117,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                   currentIndex: _selectedIndex,
                   onTap: _onItemTapped,
-                  iconSize: screenWidth * 0.07, // Responsive icon size
+                  iconSize: screenWidth * 0.07,
                 ),
               ),
             ),
